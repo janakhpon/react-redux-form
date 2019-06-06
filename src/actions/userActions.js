@@ -12,8 +12,11 @@ import {
 export const addUser = userData => dispatch => {
     axios
       .post("https://intense-inlet-82778.herokuapp.com/api/users", userData)
-      .then(
-        console.log(userData)
+      .then(res =>
+        dispatch({
+          type: CREATE_USER,
+          payload: res.data
+        })
       )
       .catch(err =>
         dispatch({
@@ -58,6 +61,8 @@ export const getUsers = () => dispatch => {
       })
     );
 };
+
+
 
 // GET USER
 export const getUser = id => dispatch => {
