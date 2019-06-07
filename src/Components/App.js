@@ -5,6 +5,8 @@ import Displaylist from './Displaylist';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import Mainpage from './Mainpage';
+import Editform from './Editform';
+import Displayuser from './Displayuser';
 import { Provider } from 'react-redux';
 import store from '../store';
 
@@ -32,6 +34,20 @@ class App extends React.Component{
                       exact
                       path="/displaylist"
                       component={Displaylist}
+                    />
+                  </Switch>
+                  <Switch>
+                    <Route
+                      exact
+                      path="/editform"
+                      component={Editform}
+                    />
+                  </Switch>
+                  <Switch>
+                    <Route
+                      exact
+                      path="/viewform"
+                      component={Displayuser}
                     />
                   </Switch>
                 </div>

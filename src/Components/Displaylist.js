@@ -22,7 +22,11 @@ class Displaylist extends React.Component {
           <Listitem key={user._id} user={user} />
         ));
       } else {
-        userItems = <h4>No data found...</h4>;
+        userItems = (
+          <tr>
+            <td>No data found...</td>
+          </tr>
+        );
       }
     }
 
