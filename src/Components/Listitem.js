@@ -35,7 +35,15 @@ class Listitem extends React.Component {
         <td>{user.password}</td>
         <td>{user.remember.toString()}</td>
         <td>
-          <Link to={`/`} className="btn btn-info">
+          <Link
+            to={{
+              pathname: "/viewform",
+              state: {
+                id: user._id
+              }
+            }}
+            className="btn btn-success"
+          >
             view
           </Link>
         </td>
@@ -44,10 +52,10 @@ class Listitem extends React.Component {
             to={{
               pathname: "/editform",
               state: {
-                id:user._id
+                id: user._id
               }
             }}
-            className="btn btn-success"
+            className="btn btn-primary"
           >
             edit
           </Link>

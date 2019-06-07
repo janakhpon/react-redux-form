@@ -16,6 +16,24 @@ class Editform extends React.Component {
     this.props.getUser(id);
   }
 
+  componentWillReceiveProps(nextProps) {
+
+
+    if (nextProps.user.user) {
+      const user = nextProps.user.user;
+
+
+      // Set component fields state
+      this.setState({
+        name: user.name,
+        email: user.email,
+        password: user.password,
+        remember: user.remember
+      });
+    }
+  }
+
+
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
@@ -26,6 +44,7 @@ class Editform extends React.Component {
 
   onSubmit(e) {
     e.preventDefault();
+    const { id } = this.props.location.state;
 
     const userData = {
       name: this.state.name,
@@ -34,11 +53,10 @@ class Editform extends React.Component {
       remember: this.state.remember
     };
 
-    this.props.updateUser(userData);
+    this.props.updateUser(userData, id);
   }
 
   render() {
-
     return (
       <div className=" card mb-3 bg-dark ">
         <div className="card-body text-left">

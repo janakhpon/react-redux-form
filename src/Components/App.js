@@ -6,7 +6,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import Mainpage from './Mainpage';
 import Editform from './Editform';
-import Viewform from './Viewform';
+import Displayuser from './Displayuser';
 import { Provider } from 'react-redux';
 import store from '../store';
 
@@ -47,7 +47,7 @@ class App extends React.Component{
                     <Route
                       exact
                       path="/viewform"
-                      component={Viewform}
+                      component={Displayuser}
                     />
                   </Switch>
                 </div>

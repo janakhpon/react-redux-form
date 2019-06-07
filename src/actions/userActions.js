@@ -27,9 +27,9 @@ export const addUser = userData => dispatch => {
 };
 
 // UPDATE USER
-export const updateUser = userData => dispatch => {
+export const updateUser = (userData, id) => dispatch => {
   axios
-    .put("https://intense-inlet-82778.herokuapp.com/api/users", userData)
+    .put(`https://intense-inlet-82778.herokuapp.com/api/users/${id}`, userData)
     .then(res =>
       dispatch({
         type: UPDATE_USER,
